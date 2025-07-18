@@ -1,7 +1,12 @@
 package main
 
-import "os"
+import (
+	"os"
+
+	"github.com/jTaylo99/DaDailyDles/bot"
+)
 
 func main() {
-	var token = os.Getenv("discordToken")
+	GuildIDs := []string{"1186255506671673384"}
+	bot.Run(os.Getenv("discordToken"), GuildIDs)
 }
