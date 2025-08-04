@@ -19,7 +19,7 @@ type dle struct {
 var loc *time.Location
 var dles []dle
 
-func init() {
+func init() { // TODO: THis function is currently storing all the "DLE" game metadata. This data should be moved to a DB, then ingested and fitted into the struct.
 	var err error
 	loc, err = time.LoadLocation("Pacific/Auckland")
 	if err != nil {
@@ -52,7 +52,7 @@ func init() {
 	}
 }
 
-func generateDleListMessage() string {
+func generateDleListMessage() string { // AI wrote this and it feels messy and inefficent. It's nice as a base to get a learning from it but I feel it needs a rebuild.
 	var sb strings.Builder
 	now := time.Now().In(loc)
 
